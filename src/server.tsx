@@ -27,7 +27,9 @@ if (process.env.NODE_ENV !== "production") {
       if (config.output) {
         config.output.path =
           config.output.path &&
-          config.output.path.replace("dist\\dist\\", "dist\\").replace("dist/dist/", "dist/");
+          config.output.path
+            .replace("dist\\dist\\", "dist\\")
+            .replace("dist/dist/", "dist/");
       }
       return config;
     }
@@ -74,12 +76,12 @@ app.get("*", (req, res) => {
       </CacheProvider>
     </StaticRouter>
   );
-
   // const html = renderToString(jsx);
   const { html, css, ids } = extractCritical(renderToString(jsx));
   const helmet = Helmet.renderStatic();
 
   res.set("content-type", "text/html");
+
   res.send(`
         <!DOCTYPE html>
         <html lang="en">

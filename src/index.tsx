@@ -28,7 +28,7 @@ loadableReady(() =>
     </BrowserRouter>,
     rootElement
   )
-);
+).catch((error) => console.error(error));
 
 if (module.hot) {
   module.hot.accept();

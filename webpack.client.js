@@ -5,7 +5,8 @@ dotenv.config();
 const dotenvPlugin = require("dotenv-webpack");
 const nodeExternals = require("webpack-node-externals");
 const LoadablePlugin = require("@loadable/webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const isDevMode = process.env.NODE_ENV !== "production";
 const hotMiddlewareScript = `webpack-hot-middleware/client?&path=/__webpack_hmr&timeout=20000&reload=true`;
@@ -14,7 +15,9 @@ const getEntryPoint = (target) => {
   if (target === "node") {
     return ["./src/App.tsx"];
   }
-  return isDevMode ? [hotMiddlewareScript, "./src/index.tsx"] : ["./src/index.tsx"];
+  return isDevMode
+    ? [hotMiddlewareScript, "./src/index.tsx"]
+    : ["./src/index.tsx"];
 };
 
 const config = (target) => ({
@@ -67,10 +70,14 @@ const config = (target) => ({
           new LoadablePlugin(),
           new dotenvPlugin(),
           new webpack.HotModuleReplacementPlugin(),
-          new BundleAnalyzerPlugin({ analyzerMode: "static", openAnalyzer: false }),
+          new BundleAnalyzerPlugin({
+            analyzerMode: "static",
+            openAnalyzer: false,
+          }),
         ]
       : [new LoadablePlugin(), new dotenvPlugin()],
-  externals: target === "node" ? ["@loadable/component", nodeExternals()] : undefined,
+  externals:
+    target === "node" ? ["@loadable/component", nodeExternals()] : undefined,
 });
 
 module.exports = () => {

@@ -28,6 +28,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "no-console": "off",
+    "no-debugger": "off",
     "no-unreachable": "error",
     "jsx-quotes": ["error", "prefer-double"],
     "eqeqeq": ["error", "always"],
