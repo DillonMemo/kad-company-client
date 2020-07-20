@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: react_ssr_sample CI
+name: CI for Kad client
 
 on: [push, pull_request]
 #on:
@@ -26,6 +26,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Npm install
+        run: npm install
+
+      - name: Build:dev
+        run: npm run build:dev
         # - run: npm ci
         # - run: npm run build --if-present
         # - run: npm test
