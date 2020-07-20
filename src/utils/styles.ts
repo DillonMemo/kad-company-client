@@ -86,11 +86,50 @@ export const root = css`
       format("Noto Sans KR");
   }
 
-  .v-center {
-    align-items: center;
+  .container {
+    width: 1560px;
+    min-width: 1560px;
+    margin: 0 auto;
+    height: 100%;
+
+    ${md} {
+      width: 1280px;
+      min-width: 1280px;
+    }
+    ${xl} {
+      width: 1080px;
+      min-width: 1080px;
+    }
+    ${lg} {
+      width: 100%;
+      min-width: 100%;
+    }
+
+    .row {
+      display: flex;
+      height: 100%;
+      padding: 0 2rem;
+
+      ${xxs} {
+        padding: 0 1rem;
+      }
+    }
+
+    .v-center {
+      align-items: center;
+    }
+    .space-between {
+      justify-content: space-between;
+    }
   }
-  .space-between {
-    justify-content: space-between;
+  .page {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+
+    .row {
+      align-items: center;
+    }
   }
 `;
 

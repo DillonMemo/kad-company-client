@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import gsap from "gsap";
 
 const homeAnimation = (completeAnimation: () => void): void => {
@@ -43,7 +44,7 @@ const homeAnimation = (completeAnimation: () => void): void => {
     });
 };
 
-import { lg, md, sm, xl, xxs } from "../../utils/styles";
+import { sm, xl, xxs } from "../../utils/styles";
 
 const Home: React.FC = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -56,7 +57,10 @@ const Home: React.FC = () => {
     return homeAnimation(completeAnimation);
   }, []);
   return (
-    <div css={DivWrapper}>
+    <Fragment>
+      <Helmet>
+        <title>K.AD Company</title>
+      </Helmet>
       {animationComplete === false ? (
         <div css={IntroOverlay}>
           <div className="top">
@@ -76,14 +80,14 @@ const Home: React.FC = () => {
           <div className="row">
             <h2>
               <div className="line">
-                <span>Creating unique brands is</span>
+                <span>검색 효율을 최대로 올리는 것은</span>
               </div>
               <div className="line">
-                <span>what we do.</span>
+                <span>우리가 하는 일 입니다.</span>
               </div>
             </h2>
             <div className="btn-row">
-              <Link to="/news">
+              <Link to="/">
                 More about us{" "}
                 <svg
                   width="24"
@@ -145,17 +149,11 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Fragment>
   );
 };
 
 /** styles */
-const DivWrapper = css`
-  z-index: 2;
-  position: relative;
-  transform: translateY(0);
-`;
-
 const IntroOverlay = css`
   .top {
     height: 50vh;
@@ -231,115 +229,95 @@ const MainContainer = css`
   height: 50vh;
   background-color: white;
 
-  .container {
-    width: 1560px;
-    min-width: 1560px;
-    margin: 0 auto;
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100%;
+    padding: 0 2rem;
 
-    ${md} {
-      width: 1280px;
-      min-width: 1280px;
-    }
-    ${xl} {
-      width: 1080px;
-      min-width: 1080px;
-    }
-    ${lg} {
-      width: 100%;
-      min-width: 100%;
+    ${xxs} {
+      padding: 0 1rem;
     }
 
-    .row {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
-      padding: 0 2rem;
+    h2 {
+      font-size: 3rem;
+      line-height: 4.2rem;
+      font-weight: 700;
+      z-index: 10;
+      color: #fff;
+      mix-blend-mode: difference;
+      margin: 2.49rem 0;
 
-      ${xxs} {
-        padding: 0 1rem;
+      ${sm} {
+        font-size: 2.4rem;
+        line-height: 3rem;
       }
 
-      h2 {
-        font-size: 3rem;
-        line-height: 4.2rem;
-        font-weight: 700;
-        z-index: 10;
-        color: #fff;
-        mix-blend-mode: difference;
-        margin: 2.49rem 0;
+      ${xxs} {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+      }
+
+      .line {
+        margin-bottom: 1.5rem;
+        height: 3.5rem;
+        position: relative;
+        overflow: hidden;
+
+        span {
+          position: absolute;
+        }
+      }
+    }
+
+    .btn-row {
+      width: 256px;
+      position: relative;
+
+      a {
+        font-size: 1.6rem;
+        color: #000;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
 
         ${sm} {
-          font-size: 2.4rem;
-          line-height: 3rem;
+          font-size: 1.3rem;
         }
 
         ${xxs} {
-          margin-top: 4.5rem;
-          font-size: 1.7rem;
-          line-height: 2.2rem;
+          font-size: 1.3rem;
         }
 
-        .line {
-          margin-bottom: 1.5rem;
-          height: 3.5rem;
-          position: relative;
-          overflow: hidden;
-
-          span {
-            position: absolute;
-          }
-        }
-      }
-
-      .btn-row {
-        width: 256px;
-        position: relative;
-
-        a {
-          font-size: 1.6rem;
-          color: #000;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          font-weight: 600;
+        svg {
+          margin-left: 1rem;
+          border: 2px solid #000;
+          padding: 0.75rem;
+          height: 3rem;
+          width: 3rem;
+          border-radius: 100px;
+          transition: 0.4s ease-in-out;
 
           ${sm} {
-            font-size: 1.3rem;
+            padding: 0.375rem;
+            width: 2.75rem;
+            height: 2.75rem;
           }
 
           ${xxs} {
-            font-size: 1.3rem;
+            padding: 0.25rem;
+            width: 2.25rem;
+            height: 2.25rem;
           }
+        }
 
+        &:hover {
           svg {
-            margin-left: 1rem;
-            border: 2px solid #000;
-            padding: 0.75rem;
-            height: 3rem;
-            width: 3rem;
-            border-radius: 100px;
-            transition: 0.4s ease-in-out;
-
-            ${sm} {
-              padding: 0.375rem;
-              width: 2.75rem;
-              height: 2.75rem;
-            }
-
-            ${xxs} {
-              padding: 0.25rem;
-              width: 2.25rem;
-              height: 2.25rem;
-            }
-          }
-
-          &:hover {
-            svg {
-              background-color: black;
-              color: white;
-            }
+            background-color: black;
+            color: white;
           }
         }
       }
