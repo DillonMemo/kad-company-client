@@ -6,6 +6,8 @@ import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/core";
 
 import App from "./App";
+import { ApolloProvider } from "@apollo/client";
+import client from "./apollo";
 
 const rootElement = document.getElementById("root");
 
@@ -22,9 +24,11 @@ const cache = createCache();
 loadableReady(() =>
   hydrate(
     <BrowserRouter>
-      <CacheProvider value={cache}>
-        <App />
-      </CacheProvider>
+      <ApolloProvider client={client}>
+        <CacheProvider value={cache}>
+          <App />
+        </CacheProvider>
+      </ApolloProvider>
     </BrowserRouter>,
     rootElement
   )

@@ -31,7 +31,7 @@ const config = {
   externals: [nodeExternals()],
 };
 
-module.exports = (env) => {
+module.exports = () => {
   console.log("server :", process.env.NODE_ENV, isDevMode);
   return config;
 };

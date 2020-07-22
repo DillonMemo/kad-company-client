@@ -25,6 +25,9 @@ module.exports = (api) => {
       ],
       "@babel/preset-typescript",
     ],
-    plugins: [/*디버깅 최적화*/ "@babel/plugin-transform-runtime", "@loadable/babel-plugin"],
+    plugins: [
+      /*디버깅 최적화*/ "@babel/plugin-transform-runtime",
+      "@loadable/babel-plugin",
+    ],
   };
 };
