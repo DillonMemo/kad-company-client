@@ -1,1 +1,0 @@
-# kad-company-client
