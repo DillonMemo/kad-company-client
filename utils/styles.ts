@@ -63,6 +63,12 @@ export const Global = createGlobalStyle`
         .space-between {
             justify-content: space-between;
         }
+        .justify-content-center {
+          justify-content: center;
+        }
+        .align-center {
+          align-items: center;
+        }
     }
 
     .page {
@@ -71,7 +77,7 @@ export const Global = createGlobalStyle`
         background-color: white;
 
         .row {
-            align-items: center;
+            flex-direction: column;
         }
     }
 
