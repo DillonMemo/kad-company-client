@@ -1,12 +1,13 @@
 {
-  "name": "with-typescript",
+  "name": "kad-company-client",
   "version": "1.0.0",
   "scripts": {
     "dev": "npm run type-check && npm run lint && next",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
-    "lint": "eslint . --ext .ts --ext .tsx --ext .js"
+    "lint": "eslint . --ext .ts --ext .tsx --ext .js",
+    "pm2:start": "pm2 start npm --name 'kad-company' --interpreter bash -- start"
   },
   "dependencies": {
     "@apollo/client": "^3.0.2",
@@ -38,5 +39,14 @@
     "typescript": "3.7.3",
     "webpack": "^4.43.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "author": "Dillon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DillonMemo/kad-company-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DillonMemo/kad-company-client/issues"
+  },
+  "homepage": "https://github.com/DillonMemo/kad-company-client#readme"
 }

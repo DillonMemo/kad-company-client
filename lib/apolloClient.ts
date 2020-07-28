@@ -25,7 +25,10 @@ function createApolloClient() {
     connectToDevTools: !isBrowser,
     ssrMode: isBrowser,
     link: new HttpLink({
-      uri: "http://localhost:4000/graphql",
+      uri:
+        process.env.NodeEnv === "development"
+          ? "http://localhost:4000/graphql"
+          : "https://kad-company-server.herokuapp.com/graphql",
       credentials: "same-origin",
     }),
     cache,
@@ -33,7 +36,12 @@ function createApolloClient() {
 }
 
 export function initializeApollo(initialState: NormalizedCacheObject = {}) {
-  // console.log("initializeApollo :", isBrowser);
+  console.log("initializeApollo :", {
+    uri:
+      process.env.NodeEnv === "development"
+        ? "http://localhost:4000/graphql"
+        : "https://kad-company-server.herokuapp.com/graphql",
+  });
   // A ?? B => A가 null이면 B 실행 아니면 A 실행
   const _apolloClient = apolloClient ?? createApolloClient();
 

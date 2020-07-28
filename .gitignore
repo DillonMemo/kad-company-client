@@ -106,6 +106,7 @@ typings/
 
 # next.js build output
 .next
+next.config.js
 
 # nuxt.js build output
 .nuxt
