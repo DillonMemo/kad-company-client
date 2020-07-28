@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Col, Form, Input, message, Row, Tooltip } from "antd";
 import { Store } from "antd/lib/form/interface";
 import { gql, useMutation } from "@apollo/client";
