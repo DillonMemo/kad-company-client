@@ -2,16 +2,19 @@
   "name": "kad-company-client",
   "version": "1.0.0",
   "scripts": {
-    "dev": "npm run type-check && npm run lint && next",
+    "check": "npm run type-check && npm run lint",
+    "dev": "npm run check && cross-env PORT=3000 NODE_ENV=development node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "npm run check && cross-env PORT=3000 NODE_ENV=production node server.js",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext .ts --ext .tsx --ext .js",
-    "pm2:start": "pm2 start npm --name 'kad-company' --interpreter bash -- start"
+    "pm2:start": "pm2 start server.js --name \"kad-company\""
   },
   "dependencies": {
     "@apollo/client": "^3.0.2",
     "antd": "^4.4.3",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
     "graphql": "^15.3.0",
     "gsap": "^3.4.2",
     "next": "latest",
