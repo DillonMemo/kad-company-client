@@ -17,6 +17,7 @@ export default function Layout({ children, title = "Default" }: Props) {
         <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/static/favicon.ico" />
       </Head>
 
       <Header />

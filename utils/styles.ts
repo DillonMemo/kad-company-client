@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+export const HeaderNavigator = "4.25rem";
+
 export const { xxs, xs, sm, md, lg, xl, xxl } = {
   xxs: "@media (max-width: 32rem)", // 512px
   xs: "@media (max-width: 38rem)", // 608px
@@ -75,6 +77,16 @@ export const Global = createGlobalStyle`
         height: 100vh;
         width: 100%;
         background-color: white;
+
+        ${sm} {
+          padding-top: ${HeaderNavigator};
+          
+          .container {
+            margin-top: ${HeaderNavigator};
+          }
+        }
+
+        
 
         .row {
             flex-direction: column;

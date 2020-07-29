@@ -7,12 +7,12 @@ import gsap from "gsap";
 import Layout from "../components/Layout";
 
 /** utils */
-import { sm, xl, xxs } from "../utils/styles";
+import { lg, sm, xl, xxs } from "../utils/styles";
 
 const indexAnimation = (completeAnimation: () => void): void => {
   gsap
     .timeline()
-    .from(".line span", 1.8, {
+    .from(".line span", 1.2, {
       y: 100,
       ease: "power4.out",
       delay: 1,
@@ -60,7 +60,7 @@ const IndexPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout title="AGENCY company">
+    <Layout title="KAD">
       {animationComplete === false ? (
         <IntroOverlay>
           <div className="top">
@@ -72,6 +72,8 @@ const IndexPage: React.FC = () => {
             <div className="overlay-bottom"></div>
             <div className="overlay-bottom"></div>
             <div className="overlay-bottom"></div>
+            <div className="overlay-bottom"></div>
+            <div className="overlay-bottom"></div>
           </div>
         </IntroOverlay>
       ) : null}
@@ -80,18 +82,16 @@ const IndexPage: React.FC = () => {
           <div className="row">
             <h2>
               <div className="line">
-                {/* <span>검색 효율을 최대로 올리는 것은</span> */}
-                <span>Creating unique brands is</span>
+                <span>확실하고 차별화된 마케팅 컨설팅</span>
               </div>
-              <div className="line">
-                {/* <span>우리가 하는 일 입니다.</span> */}
+              {/* <div className="line">
                 <span>what we do</span>
-              </div>
+              </div> */}
             </h2>
             <div className="btn-row">
-              <Link href="/">
+              <Link href="/enquiry">
                 <a>
-                  More about us{" "}
+                  문의로 이동하기{" "}
                   <svg
                     width="24"
                     height="24"
@@ -116,37 +116,76 @@ const IndexPage: React.FC = () => {
           <div className="row">
             <div className="case">
               <div className="case-details">
-                <span>Curology</span>
-                <h2>A custom formula for your skin’s unique needs</h2>
+                <h2>키워드 마케팅</h2>
+                <span>소비자가 찾는 키워드를</span>
+                <span>분석하여 검색 노출</span>
               </div>
-              <div className="case-image">
+              <div
+                className="case-image"
+                style={{ backgroundColor: "#bbbbbb" }}>
                 <img
-                  src="https://wrongakram.github.io/ar-episode1/static/media/curology-min.e84c2055.png"
+                  src="/static/keywordmarketing.png"
                   alt="A custom formula for your skin’s unique needs"
                 />
               </div>
             </div>
             <div className="case">
               <div className="case-details">
-                <span>Yourspace</span>
-                <h2>Open space floor plans for you next venture</h2>
+                <h2>바이럴 마케팅</h2>
+                <span>블로그, 연관, 플레이스로</span>
+                <span>브랜드 광고 노출</span>
               </div>
-              <div className="case-image">
+              <div
+                className="case-image"
+                style={{ backgroundColor: "#2eb300" }}>
                 <img
-                  src="https://wrongakram.github.io/ar-episode1/static/media/yourspace-min.5f9e3077.png"
+                  src="/static/viralmarketing.png"
                   alt="Open space floor plans for you next venture"
                 />
               </div>
             </div>
             <div className="case">
               <div className="case-details">
-                <span>Lumin</span>
-                <h2>For your best look ever</h2>
+                <h2>언론사 광고</h2>
+                <span>언로사 광고 노출로</span>
+                <span>신뢰도 향상</span>
               </div>
-              <div className="case-image">
+              <div
+                className="case-image"
+                style={{ backgroundColor: "#0048b3" }}>
                 <img
-                  src="https://wrongakram.github.io/ar-episode1/static/media/lumin-min.379bad94.png"
+                  src="/static/pressmarketing.png"
                   alt="For your best look ever"
+                />
+              </div>
+            </div>
+            <div className="case">
+              <div className="case-details">
+                <h2>영상 마케팅</h2>
+                <span>소비자의 시선을</span>
+                <span>사로잡는 영상마케팅</span>
+              </div>
+              <div
+                className="case-image"
+                style={{ backgroundColor: "#d70000" }}>
+                <img
+                  src="/static/videomarketing.png"
+                  alt="A custom formula for your skin’s unique needs"
+                />
+              </div>
+            </div>
+            <div className="case">
+              <div className="case-details">
+                <h2>SNS 마케팅</h2>
+                <span>소비자와 한층 더 가깝게</span>
+                <span>소통하며 브랜드 확산</span>
+              </div>
+              <div
+                className="case-image"
+                style={{ backgroundColor: "#4267b2" }}>
+                <img
+                  src="/static/snsmarketing.png"
+                  alt="A custom formula for your skin’s unique needs"
                 />
               </div>
             </div>
@@ -202,16 +241,16 @@ const IntroOverlay = styled.div`
     .overlay-bottom {
       position: absolute;
       height: 100%;
-      width: 33.333vw;
+      width: 20vw;
       background: black;
       bottom: 0;
-      right: 66.666%;
+      right: 80%;
       ${sm} {
         right: 0;
         width: 100vw;
       }
       &:nth-of-type(2) {
-        right: 33.333%;
+        right: 60%;
         ${sm} {
           width: 100vw;
           top: 100%;
@@ -219,6 +258,20 @@ const IntroOverlay = styled.div`
         }
       }
       &:nth-of-type(3) {
+        right: 40%;
+        ${sm} {
+          width: 100vw;
+          top: 200%;
+        }
+      }
+      &:nth-of-type(4) {
+        right: 20%;
+        ${sm} {
+          width: 100vw;
+          top: 200%;
+        }
+      }
+      &:nth-of-type(5) {
         right: 0;
         ${sm} {
           width: 100vw;
@@ -346,14 +399,15 @@ const CasesContainer = styled.section`
       .case {
         position: relative;
         background: #000;
-        cursor: pointer;
+        cursor: default;
         flex: 1;
 
         .case-details {
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-end;
+          align-items: center;
           padding: 32px;
           box-sizing: border-box;
           position: relative;
@@ -385,6 +439,7 @@ const CasesContainer = styled.section`
             width: 85%;
             margin-top: 16px;
             color: #fff;
+            text-align: center;
 
             ${xl} {
               font-size: 2rem;
@@ -405,19 +460,32 @@ const CasesContainer = styled.section`
           left: 0;
           width: 100%;
           height: 100%;
-          opacity: 0.65;
+          /* opacity: 0.65; */
           transition: opacity 0.4s cubic-bezier(0.6, -0.05, 0.1, 0.99);
 
+          display: flex;
+          justify-content: center;
+          padding-top: 3.5rem;
+
           img {
-            height: 100%;
-            width: 100%;
+            height: 200px;
+            width: 200px;
             object-fit: cover;
+
+            ${lg} {
+              height: 100px;
+              width: 100px;
+            }
+            ${sm} {
+              height: 150px;
+              width: 150px;
+            }
           }
         }
 
         &:hover {
           .case-image {
-            opacity: 0.4;
+            opacity: 0.8;
           }
         }
       }

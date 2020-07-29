@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import gsap from "gsap";
 
-import { sm, xs, xxs } from "../utils/styles";
+import { HeaderNavigator, sm, xs, xxs } from "../utils/styles";
 
 const openMenu = (width: number): void => {
   const tl = gsap.timeline().to("nav", 0, {
@@ -122,6 +122,8 @@ const Header: React.FC = () => {
     } else {
       closeMenu();
     }
+
+    return;
   });
 
   const handleMenuOpen = useCallback(
@@ -140,8 +142,7 @@ const Header: React.FC = () => {
         <div className="row v-center space-between">
           <div className="logo">
             <Link href="/">
-              {/* <a>K.AD</a> */}
-              <a>AGENCY</a>
+              <a>KAD</a>
             </Link>
           </div>
           <div className="nav-toggle">
@@ -229,7 +230,7 @@ const Header: React.FC = () => {
 const HeaderWrapper = styled.header`
   position: fixed;
   width: 100%;
-  height: 4.25rem;
+  height: ${HeaderNavigator};
   z-index: 4;
 
   .row {

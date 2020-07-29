@@ -22,15 +22,15 @@ const Navigation: React.FC = () => {
             <div className="nav-label">Contact</div>
             <div className="nav-infos">
               <ul className="nav-info">
-                <li className="nav-info-label">AGENCY Company</li>
+                <li className="nav-info-label">KAD Company</li>
               </ul>
               <ul className="nav-info">
                 <li className="nav-info-label">본사</li>
-                <li>서울특별시 oo구 oo대로 oo빌딩 100층</li>
+                <li>인천광역시 부평구 십정동 578-3 삼정빌딩 305호</li>
               </ul>
               <ul className="nav-info">
                 <li className="nav-info-label">연락처</li>
-                <li>010-1234-1234</li>
+                <li>010-8774-2268</li>
               </ul>
             </div>
           </div>

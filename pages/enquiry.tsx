@@ -10,7 +10,7 @@ import { sm, xxs } from "../utils/styles";
 
 const EnquiryPage: React.FC = () => {
   return (
-    <Layout title="Enquiry">
+    <Layout title="KAD | 문의">
       <div className="page">
         <div className="container">
           <div className="row justify-content-center align-center">
