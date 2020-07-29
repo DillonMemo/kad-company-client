@@ -142,13 +142,21 @@ const Header: React.FC = () => {
         <div className="row v-center space-between">
           <div className="logo">
             <Link href="/">
-              <a>KAD</a>
+              <a>
+                <img
+                  src="/static/KAD_logo_150x150.png"
+                  alt="logo"
+                  width="200"
+                />
+              </a>
             </Link>
           </div>
           <div className="nav-toggle">
-            <div className="hamburger-menu" onClick={handleMenuOpen}>
-              <span></span>
-              <span></span>
+            <div className="hamburger-menu-wrapper" onClick={handleMenuOpen}>
+              <div className="hamburger-menu" onClick={handleMenuOpen}>
+                <span></span>
+                <span></span>
+              </div>
             </div>
             <div className="hamburger-menu-close" onClick={handleMenuClose}>
               <svg width="52" height="52" viewBox="0 0 64 64">
@@ -244,6 +252,7 @@ const HeaderWrapper = styled.header`
 
     .logo {
       a {
+        cursor: pointer;
         font-size: 1.2rem;
         letter-spacing: 0.5rem;
         color: black;
@@ -253,12 +262,10 @@ const HeaderWrapper = styled.header`
     }
 
     .nav-toggle {
-      cursor: pointer;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0.5rem;
 
       ${sm} {
         margin-right: 1.5rem;
@@ -269,20 +276,25 @@ const HeaderWrapper = styled.header`
         margin-right: 1rem;
         padding: 0;
       }
+      .hamburger-menu-wrapper {
+        cursor: pointer;
+        padding: 0.5rem;
 
-      .hamburger-menu {
-        width: 1.5rem;
-        span {
-          text-align: center;
-          margin-bottom: 0.3rem;
-          background: black;
-          height: 2px;
-          width: 100%;
-          display: block;
+        .hamburger-menu {
+          width: 1.5rem;
+          span {
+            text-align: center;
+            margin-bottom: 0.3rem;
+            background: black;
+            height: 2px;
+            width: 100%;
+            display: block;
+          }
         }
       }
 
       .hamburger-menu-close {
+        cursor: pointer;
         position: absolute;
         display: none;
 

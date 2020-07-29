@@ -7,7 +7,7 @@ import gsap from "gsap";
 import Layout from "../components/Layout";
 
 /** utils */
-import { lg, sm, xl, xxs } from "../utils/styles";
+import { lg, sm, xl, xxl, xxs } from "../utils/styles";
 
 const indexAnimation = (completeAnimation: () => void): void => {
   gsap
@@ -423,32 +423,40 @@ const CasesContainer = styled.section`
             color: #fff;
             font-weight: 600;
 
-            ${xl} {
+            ${xxl} {
               font-size: 1.4rem;
             }
 
-            ${sm} {
+            ${xl} {
               font-size: 1.2rem;
+            }
+
+            ${sm} {
+              font-size: 1rem;
               line-height: 2.2rem;
             }
           }
 
           h2 {
-            font-size: 2.4rem;
-            line-height: 3.4rem;
+            font-size: 2.2rem;
+            line-height: 3.2rem;
             width: 85%;
             margin-top: 16px;
             color: #fff;
             text-align: center;
 
+            ${xxl} {
+              font-size: 1.8rem;
+              line-height: 2.6rem;
+            }
             ${xl} {
-              font-size: 2rem;
-              line-height: 2.4rem;
+              font-size: 1.4rem;
+              line-height: 2.2rem;
             }
 
             ${sm} {
-              font-size: 1.7rem;
-              line-height: 2.2rem;
+              font-size: 1.5rem;
+              line-height: 2rem;
             }
           }
         }
@@ -471,6 +479,11 @@ const CasesContainer = styled.section`
             height: 200px;
             width: 200px;
             object-fit: cover;
+
+            ${xl} {
+              height: 150px;
+              width: 150px;
+            }
 
             ${lg} {
               height: 100px;
