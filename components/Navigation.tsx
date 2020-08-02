@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
               </ul>
               <ul className="nav-info">
                 <li className="nav-info-label">연락처</li>
-                <li>010-8774-2268</li>
+                <li>070)4888-1304</li>
               </ul>
             </div>
           </div>

@@ -62,6 +62,7 @@ const Footer: React.FC<FooterProps> = ({ animationComplete = true }) => {
                 <span>
                   사업장소재지: 인천광역시 부평구 경인로 737, 305호(십정동) |{" "}
                 </span>
+                <span>대표전화 070)4888-1304 | </span>
                 <span>email: qjawls58@naver.com</span>
               </p>
             </div>
