@@ -126,10 +126,10 @@ const Header: React.FC = () => {
     return;
   });
 
-  const handleMenuOpen = useCallback(
-    (): void => setMenuState({ menuOpened: true }),
-    [menuState.menuOpened]
-  );
+  const handleMenuOpen = useCallback((): void => {
+    window.scrollTo(0, 0);
+    setMenuState({ menuOpened: true });
+  }, [menuState.menuOpened]);
 
   const handleMenuClose = useCallback(
     (): void => setMenuState({ menuOpened: false }),

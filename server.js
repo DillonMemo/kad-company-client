@@ -10,8 +10,7 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  console.log("dirname :", express.static(__dirname));
-  // server.use(express.static(__dirname), { dotfiles: "allow" });
+  // console.log("dirname :", express.static(__dirname));
 
   server.get(
     "/.well-known/acme-challenge/4o6Vu2hlv3paSsA3fwSKwz4bUr4tJy5VYlnQ9jBMunw",
@@ -24,6 +23,10 @@ app.prepare().then(() => {
         );
     }
   );
+
+  // server.get('/policy/:name', (req,res) => {
+  //   return handle(req,res);
+  // })
 
   server.all("*", (req, res) => {
     return handle(req, res);

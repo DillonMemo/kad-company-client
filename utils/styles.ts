@@ -71,22 +71,24 @@ export const Global = createGlobalStyle`
         .align-center {
           align-items: center;
         }
+        .text-center {
+          text-align: center;
+        }
+        .text-right {
+          text-align: right;
+        }
     }
 
     .page {
-        height: 100vh;
         width: 100%;
+        min-height: 100vh;
         background-color: white;
+        display: flex;
+        align-items: center;
+        padding-top: ${HeaderNavigator};
 
-        ${sm} {
-          padding-top: ${HeaderNavigator};
-          
-          .container {
-            margin-top: ${HeaderNavigator};
-          }
-        }
-
-        
+        /* ${sm} {
+        } */
 
         .row {
             flex-direction: column;
@@ -131,7 +133,7 @@ export type Palette = {
   [key in ColorKey]: Colors;
 };
 
-const palette: Palette = {
+export const palette: Palette = {
   /** Icon */
   icon: {
     light: "#b3b3b3",

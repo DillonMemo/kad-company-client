@@ -5,6 +5,7 @@ import gsap from "gsap";
 
 /** components */
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 
 /** utils */
 import { lg, sm, xl, xxl, xxs } from "../utils/styles";
@@ -60,139 +61,142 @@ const IndexPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout title="KAD">
-      {animationComplete === false ? (
-        <IntroOverlay>
-          <div className="top">
-            <div className="overlay-top"></div>
-            <div className="overlay-top"></div>
-            <div className="overlay-top"></div>
-          </div>
-          <div className="bottom">
-            <div className="overlay-bottom"></div>
-            <div className="overlay-bottom"></div>
-            <div className="overlay-bottom"></div>
-            <div className="overlay-bottom"></div>
-            <div className="overlay-bottom"></div>
-          </div>
-        </IntroOverlay>
-      ) : null}
-      <MainContainer>
-        <div className="container">
-          <div className="row">
-            <h2>
-              <div className="line">
-                <span>확실하고 차별화된 마케팅 컨설팅</span>
-              </div>
-              {/* <div className="line">
+    <>
+      <Layout title="KAD">
+        {animationComplete === false ? (
+          <IntroOverlay>
+            <div className="top">
+              <div className="overlay-top"></div>
+              <div className="overlay-top"></div>
+              <div className="overlay-top"></div>
+            </div>
+            <div className="bottom">
+              <div className="overlay-bottom"></div>
+              <div className="overlay-bottom"></div>
+              <div className="overlay-bottom"></div>
+              <div className="overlay-bottom"></div>
+              <div className="overlay-bottom"></div>
+            </div>
+          </IntroOverlay>
+        ) : null}
+        <MainContainer>
+          <div className="container">
+            <div className="row">
+              <h2>
+                <div className="line">
+                  <span>확실하고 차별화된 마케팅 컨설팅</span>
+                </div>
+                {/* <div className="line">
                 <span>what we do</span>
               </div> */}
-            </h2>
-            <div className="btn-row">
-              <Link href="/enquiry">
-                <a>
-                  문의로 이동하기{" "}
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="feather feather-arrow-right">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </MainContainer>
-      <CasesContainer>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="case">
-              <div className="case-details">
-                <h2>키워드 마케팅</h2>
-                <span>소비자가 찾는 키워드를</span>
-                <span>분석하여 검색 노출</span>
-              </div>
-              <div
-                className="case-image"
-                style={{ backgroundColor: "#bbbbbb" }}>
-                <img
-                  src="/static/keywordmarketing.png"
-                  alt="A custom formula for your skin’s unique needs"
-                />
-              </div>
-            </div>
-            <div className="case">
-              <div className="case-details">
-                <h2>바이럴 마케팅</h2>
-                <span>블로그, 연관, 플레이스로</span>
-                <span>브랜드 광고 노출</span>
-              </div>
-              <div
-                className="case-image"
-                style={{ backgroundColor: "#2eb300" }}>
-                <img
-                  src="/static/viralmarketing.png"
-                  alt="Open space floor plans for you next venture"
-                />
-              </div>
-            </div>
-            <div className="case">
-              <div className="case-details">
-                <h2>언론사 광고</h2>
-                <span>언로사 광고 노출로</span>
-                <span>신뢰도 향상</span>
-              </div>
-              <div
-                className="case-image"
-                style={{ backgroundColor: "#0048b3" }}>
-                <img
-                  src="/static/pressmarketing.png"
-                  alt="For your best look ever"
-                />
-              </div>
-            </div>
-            <div className="case">
-              <div className="case-details">
-                <h2>영상 마케팅</h2>
-                <span>소비자의 시선을</span>
-                <span>사로잡는 영상마케팅</span>
-              </div>
-              <div
-                className="case-image"
-                style={{ backgroundColor: "#d70000" }}>
-                <img
-                  src="/static/videomarketing.png"
-                  alt="A custom formula for your skin’s unique needs"
-                />
-              </div>
-            </div>
-            <div className="case">
-              <div className="case-details">
-                <h2>SNS 마케팅</h2>
-                <span>소비자와 한층 더 가깝게</span>
-                <span>소통하며 브랜드 확산</span>
-              </div>
-              <div
-                className="case-image"
-                style={{ backgroundColor: "#4267b2" }}>
-                <img
-                  src="/static/snsmarketing.png"
-                  alt="A custom formula for your skin’s unique needs"
-                />
+              </h2>
+              <div className="btn-row">
+                <Link href="/enquiry">
+                  <a>
+                    문의로 이동하기{" "}
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-arrow-right">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-      </CasesContainer>
-    </Layout>
+        </MainContainer>
+        <CasesContainer>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="case">
+                <div className="case-details">
+                  <h2>키워드 마케팅</h2>
+                  <span>소비자가 찾는 키워드를</span>
+                  <span>분석하여 검색 노출</span>
+                </div>
+                <div
+                  className="case-image"
+                  style={{ backgroundColor: "#bbbbbb" }}>
+                  <img
+                    src="/static/keywordmarketing.png"
+                    alt="A custom formula for your skin’s unique needs"
+                  />
+                </div>
+              </div>
+              <div className="case">
+                <div className="case-details">
+                  <h2>바이럴 마케팅</h2>
+                  <span>블로그, 연관, 플레이스로</span>
+                  <span>브랜드 광고 노출</span>
+                </div>
+                <div
+                  className="case-image"
+                  style={{ backgroundColor: "#2eb300" }}>
+                  <img
+                    src="/static/viralmarketing.png"
+                    alt="Open space floor plans for you next venture"
+                  />
+                </div>
+              </div>
+              <div className="case">
+                <div className="case-details">
+                  <h2>언론사 광고</h2>
+                  <span>언로사 광고 노출로</span>
+                  <span>신뢰도 향상</span>
+                </div>
+                <div
+                  className="case-image"
+                  style={{ backgroundColor: "#0048b3" }}>
+                  <img
+                    src="/static/pressmarketing.png"
+                    alt="For your best look ever"
+                  />
+                </div>
+              </div>
+              <div className="case">
+                <div className="case-details">
+                  <h2>영상 마케팅</h2>
+                  <span>소비자의 시선을</span>
+                  <span>사로잡는 영상마케팅</span>
+                </div>
+                <div
+                  className="case-image"
+                  style={{ backgroundColor: "#d70000" }}>
+                  <img
+                    src="/static/videomarketing.png"
+                    alt="A custom formula for your skin’s unique needs"
+                  />
+                </div>
+              </div>
+              <div className="case">
+                <div className="case-details">
+                  <h2>SNS 마케팅</h2>
+                  <span>소비자와 한층 더 가깝게</span>
+                  <span>소통하며 브랜드 확산</span>
+                </div>
+                <div
+                  className="case-image"
+                  style={{ backgroundColor: "#4267b2" }}>
+                  <img
+                    src="/static/snsmarketing.png"
+                    alt="A custom formula for your skin’s unique needs"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </CasesContainer>
+      </Layout>
+      <Footer animationComplete={animationComplete} />
+    </>
   );
 };
 
@@ -233,11 +237,17 @@ const IntroOverlay = styled.div`
     }
   }
   .bottom {
+    min-height: 50vh;
     height: 50vh;
     position: absolute;
     bottom: 0;
     width: 100%;
     z-index: 8;
+
+    ${sm} {
+      height: auto;
+      top: 50vh;
+    }
     .overlay-bottom {
       position: absolute;
       height: 100%;
@@ -252,30 +262,34 @@ const IntroOverlay = styled.div`
       &:nth-of-type(2) {
         right: 60%;
         ${sm} {
-          width: 100vw;
+          /* width: 100vw;
           top: 100%;
-          right: 0;
+          right: 0; */
+          display: none;
         }
       }
       &:nth-of-type(3) {
         right: 40%;
         ${sm} {
-          width: 100vw;
-          top: 200%;
+          /* width: 100vw;
+          top: 200%; */
+          display: none;
         }
       }
       &:nth-of-type(4) {
         right: 20%;
         ${sm} {
-          width: 100vw;
-          top: 200%;
+          /* width: 100vw;
+          top: 200%; */
+          display: none;
         }
       }
       &:nth-of-type(5) {
         right: 0;
         ${sm} {
-          width: 100vw;
-          top: 200%;
+          /* width: 100vw;
+          top: 200%; */
+          display: none;
         }
       }
     }
@@ -283,6 +297,7 @@ const IntroOverlay = styled.div`
 `;
 
 const MainContainer = styled.section`
+  min-height: 50vh;
   height: 50vh;
   background-color: white;
 
@@ -325,6 +340,10 @@ const MainContainer = styled.section`
 
         span {
           position: absolute;
+        }
+
+        ${xxs} {
+          height: 4rem;
         }
       }
     }
@@ -383,7 +402,12 @@ const MainContainer = styled.section`
 `;
 
 const CasesContainer = styled.section`
+  min-height: 50vh;
   height: 50vh;
+
+  ${sm} {
+    height: auto;
+  }
   .container-fluid {
     width: 100%;
     height: 100%;

@@ -1,9 +1,11 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 /** components */
 import Header from "./Header";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 interface Props {
   title: string;
@@ -11,6 +13,7 @@ interface Props {
 }
 
 export default function Layout({ children, title = "Default" }: Props) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -22,6 +25,7 @@ export default function Layout({ children, title = "Default" }: Props) {
 
       <Header />
       <Wrapper className="App">{children}</Wrapper>
+      {router.pathname !== "/" && <Footer />}
       <Navigation />
     </>
   );
